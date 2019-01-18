@@ -2,6 +2,88 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Can I use... Support tables for HTML5, CSS3, etc</title>
+    <title>srcset + sizes</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #img-density {
+      }
+
+      #img-w {
+        width: 100%;
+        display: block;
+      }
+
+      #img-half-width {
+        width: 50%;
+        display: block;
+      }
+
+      #img-media-queries-calc,
+      #img-media-queries {
+        width: 100%;
+        display: block;
+      }
+
+      @media (min-width: 600px) {
+        #img-media-queries {
+          width: 50%;
+        }
+
+        #img-media-queries-calc {
+          width: calc(50% - 50px);
+        }
+      }
+    </style>
   </head>
+  <body>
+    <p>#img-density</p>
+    <img
+      id="img-density"
+      src="photo-500.jpg"
+      srcset="photo-500.jpg, photo-1000.jpg 2x, photo-1500.jpg 3x"
+      alt=""
+    />
+    <hr />
+
+    <p>#img-w</p>
+    <img
+      id="img-w"
+      src="photo-500.jpg"
+      srcset="photo-500.jpg 500w, photo-1000.jpg 1000w, photo-1500.jpg 1500w"
+      alt=""
+    />
+    <hr />
+
+    <p>#img-half-width</p>
+    <img
+      id="img-half-width"
+      src="photo-500.jpg"
+      srcset="photo-500.jpg 500w, photo-1000.jpg 1000w, photo-1500.jpg 1500w"
+      alt=""
+    />
+    <hr />
+
+    <p>#img-media-queries</p>
+    <img
+      id="img-media-queries"
+      src="photo-500.jpg"
+      srcset="photo-500.jpg 500w, photo-1000.jpg 1000w, photo-1500.jpg 1500w"
+      sizes="(min-width: 600px) 50vw, 100vw"
+      alt=""
+    />
+    <hr />
+
+    <p>#img-media-queries-calc</p>
+    <img
+      id="img-media-queries-calc"
+      src="photo-500.jpg"
+      srcset="photo-500.jpg 500w, photo-1000.jpg 1000w, photo-1500.jpg 1500w"
+      sizes="(min-width: 600px) calc(50vw - 50px), 100vw"
+      alt=""
+    />
+  </p>
 </html>
