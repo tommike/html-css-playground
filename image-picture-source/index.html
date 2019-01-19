@@ -8,6 +8,7 @@
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
 
       img {
@@ -20,16 +21,36 @@
           width: 70%;
         }
       }
+
+      @media (min-width: 1450px) {
+        img {
+          border: 1px solid #ddd;
+          border-width: 100px 400px;
+        }
+      }
+
+      @media (min-width: 1500px) {
+        img {
+          border: 1px solid red;
+          border-width: 100px 400px;
+        }
+      }
     </style>
   </head>
   <body>
 
   <picture>
+      <source media="(min-width: 1500px)"
+      srcset="photo-circle.jpg 1000w,
+              photo-circle@2x.jpg 2000w,
+              photo-circle@3x.jpg 3000w"
+              sizes="calc(70vw - 300px - 300px)">
+
     <source media="(min-width: 1000px)"
             srcset="photo-circle.jpg 1000w,
                     photo-circle@2x.jpg 2000w,
                     photo-circle@3x.jpg 3000w"
-            sizes="70vw">
+                    sizes="70vw">
 
     <source media="(min-width: 500px)"
             srcset="photo-square.jpg 500w,
