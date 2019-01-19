@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>object-fit &amp; object-position</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      img {
+        width: 300px;
+        height: 150px;
+        border: 10px solid silver;
+      }
+
+      figure {
+        position: relative;
+        display: block;
+        margin-bottom: 25px;
+      }
+
+      figcaption {
+      }
+    </style>
+  </head>
+  <body>
+
+  <figure>
+    <img src="photo.jpg" style="width: 460px; height: 460px; display: block">
+    <figcaption>no style image</figcaption>
+  </figure>
+
+  <figure>
+      <img src="photo.jpg" style="object-fit: none">
+      <figcaption>object-fit: none</figcaption>
+  </figure>
+
+  <figure>
+    <img src="photo.jpg" style="object-fit: cover">
+    <figcaption>object-fit: cover</figcaption>
+  </figure>
+
+  <figure>
+      <img src="photo.jpg" style="object-fit: contain">
+      <figcaption>object-fit: contain</figcaption>
+  </figure>
+
+  <figure>
+      <img src="photo.jpg" style="object-fit: fill">
+      <figcaption>object-fit: fill</figcaption>
+  </figure>
+
+  <figure>
+      <img src="photo.jpg" style="object-fit: scale-down">
+      <figcaption>object-fit: scale-down (original 460px x 460px)</figcaption>
+  </figure>
+
+  <figure>
+      <img src="photo.jpg" style="object-fit: scale-down; width: 1000px; height: 1000px">
+      <figcaption>object-fit: scale-down  (1000px x 1000px)</figcaption>
+  </figure>
+
+  <figure>
+      <img src="photo.jpg" style="object-fit: cover; object-position: top left">
+      <figcaption>object-fit: cover; object-position: top left</figcaption>
+  </figure>
+
+  <figure>
+      <img src="photo.jpg" style="object-fit: cover; object-position: bottom right">
+      <figcaption>object-fit: cover; object-position: bottom right</figcaption>
+  </figure>
+
+  <figure>
+      <img src="photo.jpg" style="object-position: 50% 50%; font-family: 'object-fit: cover; object-position: 50% 50%';">
+      <figcaption>MS-Edge fix</figcaption>
+  </figure>
+
+</html>
