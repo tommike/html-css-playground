@@ -40,32 +40,41 @@
         }
 
         .photo {
-          flex: 1 1 50%;
+          flex: 0 1 50%;
+        }
+
+        .featured {
+          flex: 1 1 100%;
         }
       }
 
       @supports(display: grid) {
 
         @media(min-width: 700px) {
-          h1 {
-            grid-column: 1 / -1;
-          }
 
           section {
             display: grid;
             grid-gap: 0.5em;
             grid-template-columns: repeat(2, 1fr);
           }
+
+          h1 {
+            grid-column: 1 / -1;
+          }
+
+          .featured {
+            grid-column: 1 / -1;
+          }
         }
 
-        }
+      }
       </style>
   </head>
   <body>
 
     <section>
       <h1>CSS Grid with Flexbox fallback</h1>
-      <div class="photo">
+      <div class="photo featured">
         <img src="https://picsum.photos/300/200">
       </div>
       <div class="photo">
