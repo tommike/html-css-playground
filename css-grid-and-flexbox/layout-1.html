@@ -11,20 +11,16 @@
       }
 
       section {
-        display: flex;
-        flex-flow: row wrap;
         max-width: 1000px;
         margin: 0 auto;
         background: lightblue;
       }
 
       h1 {
-        flex: 1 1 100%;
         background: lightcoral;
       }
 
       .photo {
-        flex: 1 1 50%;
         border: 5px solid lightpink;
       }
 
@@ -33,18 +29,36 @@
         width: 100%;
       }
 
-      @supports(display: grid) {
-        h1 {
-          grid-column: 1 / -1;
+      @media(min-width: 700px) {
+        section {
+          display: flex;
+          flex-flow: row wrap;
         }
 
-        section {
-          display: grid;
-          grid-gap: 0.5em;
-          grid-template-columns: repeat(2, 1fr);
+        h1 {
+          flex: 1 1 100%;
+        }
+
+        .photo {
+          flex: 1 1 50%;
         }
       }
-    </style>
+
+      @supports(display: grid) {
+
+        @media(min-width: 700px) {
+          h1 {
+            grid-column: 1 / -1;
+          }
+
+          section {
+            display: grid;
+            grid-gap: 0.5em;
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        }
+      </style>
   </head>
   <body>
 
