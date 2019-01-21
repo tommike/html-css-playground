@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>flexbox with grid fallback</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      section {
+        display: flex;
+        flex-flow: row wrap;
+        max-width: 1000px;
+        margin: 0 auto;
+        background: lightblue;
+      }
+
+      h1 {
+        flex: 1 1 100%;
+        background: lightcoral;
+      }
+
+      .photo {
+        flex: 1 1 50%;
+        border: 5px solid lightpink;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      @supports(display: grid) {
+        h1 {
+          grid-column: 1 / -1;
+        }
+
+        section {
+          display: grid;
+          grid-gap: 0.5em;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <section>
+      <h1>Section title</h1>
+      <div class="photo">
+        <img src="https://picsum.photos/300/200">
+      </div>
+      <div class="photo">
+        <img src="https://picsum.photos/300/200">
+      </div>
+      <div class="photo">
+        <img src="https://picsum.photos/300/200">
+      </div>
+      <div class="photo">
+        <img src="https://picsum.photos/300/200">
+      </div>
+    </section>
+
+</html>
